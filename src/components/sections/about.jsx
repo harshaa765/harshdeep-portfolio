@@ -7,15 +7,15 @@ export default function About() {
     <div id='about' className='py-4 text-justify'>
       <SectionHeader header='about' />
       <article className='prose mx-auto mt-8 max-w-screen-2xl place-content-center px-2 text-center lg:prose-xl md:px-4 lg:px-16'>
-        <blockquote>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            nisl augue, ornare ac pellentesque sit amet, mattis vitae lorem.
-            Cras posuere turpis mauris, id posuere neque dictum id. Aenean magna
-            arcu, vestibulum non ligula eget, viverra vehicula sem. Maecenas
-            iaculis facilisis accumsan.
-          </p>
-        </blockquote>
+<blockquote>
+  <p>
+    I’m Harshdeep Sharma, a final-year PhD researcher in Computational Mechanics at IIT Patna. 
+    My work focuses on developing advanced numerical models for fatigue and fracture in 
+    fiber-reinforced composites, using phase-field and cohesive zone methods. I specialize 
+    in implementing custom user elements (UEL) in Abaqus, and I’m passionate about blending 
+    physics-based simulations with AI techniques for next-gen material modeling tools.
+  </p>
+</blockquote>
       </article>
       <div className='mx-auto max-w-screen-2xl px-2 md:px-4 lg:px-16'>
         <ul className='timeline timeline-vertical timeline-snap-icon my-10 max-md:timeline-compact'>
