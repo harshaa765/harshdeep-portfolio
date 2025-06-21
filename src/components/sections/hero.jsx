@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import profilePic from '../../../public/img/about-image.png';
+// import profilePic from '../../../public/img/about-image.png';
+import profilePic from '../../../public/img/harshdeep_profile_photo.jpg';
+
 
 export default function Hero() {
   return (
