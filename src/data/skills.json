@@ -1,11 +1,22 @@
 {
   "primary": [
-    { "name": "Node.JS", "value": 75 },
-    { "name": "React.JS", "value": 75 },
-    { "name": "Next.JS", "value": 65 },
-    { "name": "JavaScript", "value": 70 },
-    { "name": "Docker", "value": 50 },
-    { "name": "Nginx", "value": 50 }
+    { "name": "Abaqus (UEL, UMAT)", "value": 95 },
+    { "name": "Python (NumPy, SciPy, Matplotlib, TensorFlow)", "value": 90 },
+    { "name": "Fortran", "value": 85 },
+    { "name": "C++", "value": 80 },
+    { "name": "Phase-Field Modeling", "value": 90 },
+    { "name": "Cohesive Zone Models", "value": 85 },
+    { "name": "Finite Element Methods", "value": 95 }
   ],
-  "secondary": ["React Native", "Redis", "GraphQL", "Ghost CMS", "SQL"]
+  "secondary": [
+    "COMSOL",
+    "ANSYS APDL",
+    "MATLAB",
+    "FEniCS",
+    "Gmsh",
+    "ParaView",
+    "HPC",
+    "PINN",
+    "DSA"
+  ]
 }
