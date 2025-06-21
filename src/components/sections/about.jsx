@@ -9,11 +9,15 @@ export default function About() {
       <article className='prose mx-auto mt-8 max-w-screen-2xl place-content-center px-2 text-center lg:prose-xl md:px-4 lg:px-16'>
 <blockquote>
   <p>
-    I’m Harshdeep Sharma, a final-year PhD researcher in Computational Mechanics at IIT Patna. 
-    My work focuses on developing advanced numerical models for fatigue and fracture in 
-    fiber-reinforced composites, using phase-field and cohesive zone methods. I specialize 
-    in implementing custom user elements (UEL) in Abaqus, and I’m passionate about blending 
-    physics-based simulations with AI techniques for next-gen material modeling tools.
+    I’m <strong>Harshdeep Sharma</strong>, a final-year PhD researcher in Computational Mechanics at <strong>IIT Patna</strong>. 
+    My research focuses on developing cutting-edge numerical models for simulating fatigue and fracture behavior 
+    in fiber-reinforced composites. I work extensively with <strong>phase-field</strong> and <strong>cohesive zone methods</strong>, 
+    and I specialize in implementing <strong>custom user elements (UELs)</strong> in Abaqus.
+  </p>
+  <p>
+    My broader vision is to bridge the gap between traditional physics-based modeling and emerging AI techniques 
+    to build next-generation material modeling tools. I'm passionate about high-performance computing, automation, 
+    and open-source scientific development.
   </p>
 </blockquote>
       </article>
