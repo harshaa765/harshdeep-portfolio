@@ -30,8 +30,8 @@ export default function Header() {
             <NavItems />
           </ul>
         </div>
-        <Link className="btn btn-ghost text-xl" href="/">
-          next-portfolio-blog
+        <Link className="btn btn-ghost text-xl font-bold tracking-wide" href="/">
+          Harshdeep Sharma
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
