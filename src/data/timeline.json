@@ -1,26 +1,50 @@
 [
   {
-    "year": "2010 - 2013",
-    "title": "UG",
-    "subTitle": "College - City",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ornare ac pellentesque sit amet, mattis vitae lorem."
+    "year": "2017",
+    "title": "🎓 B.Tech in Mechanical Engineering",
+    "subTitle": "UIET KUK, India",
+    "text": "Completed undergraduate thesis on HCF and LCF life simulations of aluminum alloy using built-in S-N and ε–N models."
   },
   {
-    "year": "2013 - 2015",
-    "title": "PG",
-    "subTitle": "College - City",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ornare ac pellentesque sit amet, mattis vitae lorem."
+    "year": "2020",
+    "title": "🎓 M.Tech in Mechanical System Design",
+    "subTitle": "IIT Indore, India",
+    "text": "Thesis: Numerical implementation of crystal plasticity in FCC crystals. Developed CPFEM model using UMAT in Abaqus. CGPA: 8.82/10."
   },
   {
-    "year": "June 2018 - Feb 2020",
-    "title": "Software Developer",
-    "subTitle": "Company - Location",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ornare ac pellentesque sit amet, mattis vitae lorem."
+    "year": "Aug 2020 – Present",
+    "title": "🎓 PhD Candidate in Computational Mechanics",
+    "subTitle": "IIT Patna, India",
+    "text": "Research on phase-field and cohesive zone modeling for fracture and fatigue in fiber-reinforced composites. Developed multiple UEL/UMAT subroutines and open-sourced codes."
   },
   {
-    "year": "Feb 2020 - Present",
-    "title": "Senior Software Developer",
-    "subTitle": "Company - Location",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ornare ac pellentesque sit amet, mattis vitae lorem."
+    "year": "2018 – 2020",
+    "title": "🧑‍🏫 Teaching Assistant",
+    "subTitle": "IIT Indore",
+    "text": "Courses: Fracture Mechanics, Vibrations and Noise Control, FEM, and Engineering Graphics."
+  },
+  {
+    "year": "2021 – Present",
+    "title": "🧑‍🏫 Teaching Assistant",
+    "subTitle": "IIT Patna",
+    "text": "Courses: SolidWorks Lab, ANSYS APDL Labs, Fracture & Fatigue, and Finite Element Methods."
+  },
+  {
+    "year": "2023 – Present",
+    "title": "🧑‍💼 Thesis Supervision",
+    "subTitle": "BTech/MTech Students, IIT Patna",
+    "text": "Guiding projects on phase-field modeling, fatigue simulation, and PINN-based fracture analysis."
+  },
+  {
+    "year": "2016 & 2017",
+    "title": "🏆 GATE (ME)",
+    "subTitle": "National Level Exam, India",
+    "text": "Qualified GATE with 97.05 percentile in 2016 and 98.97 percentile in 2017."
+  },
+  {
+    "year": "2018 – Present",
+    "title": "🎖️ MHRD Fellowship",
+    "subTitle": "Ministry of Education, India",
+    "text": "Awarded Institute Fellowship during M.Tech and PhD for academic excellence."
   }
 ]
