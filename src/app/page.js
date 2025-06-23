@@ -48,7 +48,7 @@ export default function Page() {
       <Hero />
       <About />
       <Skills />
-      <Awards /> {/* 👈 Add this */}
+      <Awards /> 
       <Blog />
       <Projects />
       <Contact />
