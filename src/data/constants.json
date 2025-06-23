@@ -1,6 +1,6 @@
 {
-  "CONTACT_EMAIL": "contact_form_target_email",
+  "CONTACT_EMAIL": "harshsharma52@gmail.com",
   "BASE_URL": "http://localhost:3000",
   "BASE_URL_BLOG": "http://localhost:3000/blog",
-  "SITE_NAME": "next-portfolio-blog"
+  "SITE_NAME": "Harshdeep Sharma"
 }
