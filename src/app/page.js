@@ -4,6 +4,7 @@ import Hero from '../components/sections/hero';
 import About from '../components/sections/about';
 import Skills from '../components/sections/skills';
 import Awards from '../components/sections/awards';
+import Publications from '../components/sections/publications';
 import Blog from '../components/sections/blog';
 import Projects from '../components/sections/projects';
 import Contact from '../components/sections/contact';
@@ -49,6 +50,7 @@ export default function Page() {
       <About />
       <Skills />
       <Awards /> 
+      <Publications />  {/* 👈 Add here */}
       <Blog />
       <Projects />
       <Contact />
