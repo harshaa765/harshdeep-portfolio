@@ -1,20 +1,43 @@
 {
   "home": {
-    "title": "next-portfolio-blog",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ornare ac pellentesque sit amet, mattis vitae lorem.",
+    "title": "Harshdeep Sharma | Computational Mechanics | Fracture & Fatigue Modeling",
+    "description": "Portfolio and research blog of Harshdeep Sharma, PhD candidate in Computational Mechanics. Specializing in fracture and fatigue in composites using phase-field and cohesive zone models. Interested in LLMs, Computer Vision, Neural Networks, and Transformers for mechanics.",
     "keywords": [
-      "next-portfolio-blog",
-      "modern website development",
-      "mobile apps development"
+      "Harshdeep Sharma",
+      "Computational Mechanics",
+      "Fracture Mechanics",
+      "Fatigue in Composites",
+      "Phase-Field Modeling",
+      "Abaqus UEL UMAT",
+      "High-Cycle Fatigue",
+      "PINNs",
+      "FEM",
+      "Neural Networks",
+      "Large Language Models",
+      "Transformer Models",
+      "Computer Vision",
+      "AI for Mechanics",
+      "Research Portfolio",
+      "PhD Research"
     ]
   },
   "blogs": {
-    "title": "Blog | next-portfolio-blog",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl augue, ornare ac pellentesque sit amet, mattis vitae lorem.",
+    "title": "Blog | Harshdeep Sharma - Computational Mechanics & AI",
+    "description": "Technical articles and research insights by Harshdeep Sharma on phase-field fracture, cohesive zone models, FEM, AI in mechanics, PINNs, and transformer-based modeling.",
     "keywords": [
-      "next-portfolio-blog",
-      "modern website development",
-      "mobile apps development"
+      "Harshdeep Sharma blog",
+      "Phase-field tutorial",
+      "Fracture modeling",
+      "Abaqus UEL blog",
+      "FEM simulations",
+      "Python FORTRAN research",
+      "Computational Mechanics blog",
+      "AI for engineering",
+      "PINNs tutorial",
+      "LLMs in research",
+      "Transformer models",
+      "Computer Vision mechanics",
+      "Neural networks in fracture"
     ]
   }
 }
