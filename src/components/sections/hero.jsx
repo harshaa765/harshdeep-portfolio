@@ -34,6 +34,15 @@ export default function Hero() {
           >
             Contact Me
           </Link>
+          <Link
+  href="/harshdeep_sharma_cv.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  role="button"
+  className="btn btn-primary btn-wide my-2"
+>
+  Download CV
+</Link>
         </div>
       </div>
     </section>
