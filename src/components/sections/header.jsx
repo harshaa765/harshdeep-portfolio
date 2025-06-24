@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import NavItems from '../elements/navMenu';
+import ThemeToggle from '../elements/themetoggle';
 
 export default function Header() {
   return (
@@ -38,6 +39,7 @@ export default function Header() {
         <ul className="menu menu-horizontal px-1">
           <NavItems />
         </ul>
+        <ThemeToggle /> {/* ✅ Add here */}
       </div>
     </header>
   );
