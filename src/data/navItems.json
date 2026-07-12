@@ -12,12 +12,16 @@
     "href": "/#skills"
   },
   {
-    "label": "Blog",
-    "href": "/#blog"
+    "label": "Publications",
+    "href": "/#publications"
   },
   {
     "label": "Projects",
     "href": "/#projects"
+  },
+  {
+    "label": "Blog",
+    "href": "/blog"
   },
   {
     "label": "Contact",

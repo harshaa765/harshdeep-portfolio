@@ -1,60 +1,86 @@
-# Personal blog cum portfolio starter kit with Next 15
+# Harshdeep Sharma — Portfolio & Research Blog
 
+Personal portfolio and blog of **Harshdeep Sharma**, PhD researcher in Computational
+Mechanics (fracture & fatigue of composites, phase-field / cohesive-zone modeling, and
+physics-informed machine learning).
 
-![next14-blog-portfolio](https://github.com/user-attachments/assets/a3d08920-bb01-4de5-996d-f4e929a20934)
+Built with **Next.js 15 (App Router)**, **React 19**, **Tailwind CSS 4**, **daisyUI 5**, and
+**MDX** for the blog.
 
-I was creating a blog for my personal use using NextJS and Tailwind and decided to extract the basic setup to be used as a template. Most of the templates available are just a starter kit and miss on something or other. This has everything that you need to start a blog:
+## Features
 
-- NextJS with app router
-- MDX
-- Contact API to send emails using Gmail / Nodemailer
-- Tailwind CSS 4
-- Tailwind typography
-- Daisy UI
-- Google Analytics
-- JSON LD
-- ESLint
-- Prettier
-- Env file
+- Single-page portfolio: hero, about + timeline, skills, publications, projects, awards, contact
+- MDX blog with reading time, SEO metadata, and JSON-LD structured data
+- Light/dark theme (system-aware) via `next-themes`, bound to a custom daisyUI theme
+- Contact form backed by a serverless route using Nodemailer / Gmail SMTP
+- SEO: per-page metadata, Open Graph, `sitemap.xml`, `robots.txt`, and JSON-LD
+- Content is data-driven — most sections read from JSON in `src/data`
 
-## Steps to build your blog:
+## Getting started
 
-- Clone this repo
-- This project uses npm to manage node modules, so install the dependencies using `npm install` or `npm i`
-- Run the project in dev mode using `npm run dev`
-- Visit the browser at [http://localhost:3000](http://localhost:3000)
+```bash
+npm install
+cp .env.example .env.local   # then fill in the values
+npm run dev                  # http://localhost:3000
+```
 
-## Customizing the portfolio data
+## Environment variables
 
-- Update the .env file with required values (but don't push it to your repo)
-- Replace the dummy data for the landing page in `src/data` files with values that best describe you
-- Replace with your icons and data for manifest, robots and sitemap files present in the `src/app` directory
-- Replace the email to, from and subject text in `src/app/api/contact/route.js`
-- Update the SEO metadata in `src/app/page.js`, `src/app/blog/page.js` and `src/app/blog/[slug]/page.js`
-- The landing page is broken into multiple sections `src/app/components/sections` - customize the text as needed
-- Update the JSON LD data at `src/utils/jsonLD.js`
-- Update the hero image at `public/img/about-image.png`
+Copy `.env.example` to `.env.local` and set:
 
-## Writing blogs
+| Variable | Purpose |
+| --- | --- |
+| `EMAIL_USERNAME` | Gmail address used to send contact-form mail |
+| `EMAIL_PASSWORD` | Gmail **App Password** (not the account password) |
+| `NEXT_PUBLIC_ANALYTICS_ID` | Google Tag Manager / Analytics ID (optional) |
+| `NEXT_PUBLIC_SITE_URL` | Public base URL, e.g. `https://your-domain.com` |
 
-- Blogs are configured to be placed in `posts` directory at the project root
-- Cover images for the blog are to be placed at `public/img/blog/cover/file_name_to_be_blog_id`
-- Images inside a blog are to be placed at `public/img/blog/[create_a_directory_with_blog_id]/[image_name]`
-- Each word in the blog filename must be `-` separated as that would be your URL and ending with `.mdx` extension
-- Each blog post will have two sections - metadata and content
-- Metadata will used for SEO and page rendering both
-- Content section will have your mdx data [https://mdxjs.com/](https://mdxjs.com/)
+> `.env.local` is git-ignored — never commit real secrets.
 
-## Deployment
+## Editing content
 
-- I am using a VPS to host my hobby projects as that allows me to tinker around the server and learn the setup process
-- Push your code to git
-- Pull into your server
-- Build for production using `npm run build`
-- Fix any linting errors if thrown
-- Install PM2
-- Install Nginx
-- Install certbot for HTTPS
-- Create server block in Nginx
-- Configure nginx to use HTTP/2
-- Start your site using PM2 and configure it to start on server reboot
+Most content lives in `src/data` and `src/config`:
+
+| File | Controls |
+| --- | --- |
+| `src/config/site.js` | Site URL, name, job title, contact email (single source of truth) |
+| `src/data/seo.json` | Titles, descriptions, keywords |
+| `src/data/socials.json` | Social links (LinkedIn, GitHub, ORCID, Scholar, ResearchGate) |
+| `src/data/skills.json` | Skills (primary bars + secondary tags) |
+| `src/data/timeline.json` | Education / experience timeline (About section) |
+| `src/data/publications.json` | Publications (title, authors, venue, year, DOI, status) |
+| `src/data/projects.json` | Featured projects (title, description, tech, GitHub, stars) |
+| `src/data/awards.json` | Awards |
+| `src/data/navItems.json` | Header navigation |
+
+## Writing blog posts
+
+Add `.mdx` files to `posts/`. Each post has front matter (`title`, `publishedAt`,
+`excerpt`, `cover`, `category`, `keywords`) followed by MDX content. The filename becomes
+the URL slug. Cover images go in `public/img/blog/`.
+
+## Scripts
+
+```bash
+npm run dev        # start dev server
+npm run build      # production build
+npm run start      # serve the production build
+npm run lint       # ESLint
+npm run prettier   # format with Prettier
+```
+
+## Deployment (Vercel)
+
+1. Import the repo into Vercel.
+2. Add the environment variables above in Project → Settings → Environment Variables
+   (set `NEXT_PUBLIC_SITE_URL` to your production domain).
+3. Deploy — Vercel builds on every push to `main`.
+
+## Credits
+
+Bootstrapped from the [next-portfolio-blog](https://github.com/abhijeet-ixr/next-portfolio-blog)
+starter template.
+
+## License
+
+[MIT](./LICENSE)

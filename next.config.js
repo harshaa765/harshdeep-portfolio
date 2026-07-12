@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx'],
-  poweredByHeader: false
+  poweredByHeader: false,
 };
 
 module.exports = nextConfig;

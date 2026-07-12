@@ -1,38 +1,32 @@
 [
   {
-    "year": "2017",
+    "year": "2013 – 2017",
     "title": "🎓 B.Tech in Mechanical Engineering",
-    "subTitle": "UIET KUK, India",
-    "text": "Completed undergraduate thesis on HCF and LCF life simulations of aluminum alloy using built-in S-N and ε–N models."
-  },
-  {
-    "year": "2020",
-    "title": "🎓 M.Tech in Mechanical System Design",
-    "subTitle": "IIT Indore, India",
-    "text": "Thesis: Numerical implementation of crystal plasticity in FCC crystals. Developed CPFEM model using UMAT in Abaqus. CGPA: 8.82/10."
-  },
-  {
-    "year": "Aug 2020 – Present",
-    "title": "🎓 PhD Candidate in Computational Mechanics",
-    "subTitle": "IIT Patna, India",
-    "text": "Research on phase-field and cohesive zone modeling for fracture and fatigue in fiber-reinforced composites. Developed multiple UEL/UMAT subroutines and open-sourced codes."
+    "subTitle": "UIET, Kurukshetra University, India",
+    "text": "Undergraduate project on HCF/LCF life prediction of aluminum alloy using S–N and ε–N based numerical models."
   },
   {
     "year": "2018 – 2020",
-    "title": "🧑‍🏫 Teaching Assistant",
-    "subTitle": "IIT Indore",
-    "text": "Courses: Fracture Mechanics, Vibrations and Noise Control, FEM, and Engineering Graphics."
+    "title": "🎓 M.Tech in Mechanical System Design",
+    "subTitle": "IIT Indore, India",
+    "text": "Developed a physics-based CPFEM UMAT for FCC aluminum across strain rates (1e-3 to 1e3 /s). CGPA 8.82/10; open-sourced with community adoption on GitHub."
   },
   {
-    "year": "2021 – Present",
-    "title": "🧑‍🏫 Teaching Assistant",
-    "subTitle": "IIT Patna",
-    "text": "Courses: SolidWorks Lab, ANSYS APDL Labs, Fracture & Fatigue, and Finite Element Methods."
+    "year": "2020 – 2025",
+    "title": "🎓 PhD in Computational Mechanics (Thesis Submitted)",
+    "subTitle": "IIT Patna, India",
+    "text": "Phase-field and cohesive-zone models for fracture and fatigue in fiber-reinforced composites, with multiple custom Abaqus UEL/UMAT subroutines. CGPA 9.5/10."
   },
   {
-    "year": "2023 – Present",
-    "title": "🧑‍💼 Thesis Supervision",
-    "subTitle": "BTech/MTech Students, IIT Patna",
-    "text": "Guiding projects on phase-field modeling, fatigue simulation, and PINN-based fracture analysis."
+    "year": "2018 – 2025",
+    "title": "🧑‍🏫 Teaching Assistant & Thesis Supervision",
+    "subTitle": "IIT Indore & IIT Patna",
+    "text": "TA for Fracture Mechanics, FEM, Vibrations, SolidWorks and ANSYS APDL labs; supervised BTech/MTech theses on phase-field, fatigue and PINN-based fracture."
+  },
+  {
+    "year": "Jan 2026 – Present",
+    "title": "🔬 Senior Research Scientist",
+    "subTitle": "ZenteiQ Aitech Innovations · AiREX Lab, IISc Bangalore",
+    "text": "Building scientific machine learning: Neural Operators (FNO, GINO, WNO, Transolver) in JAX, hybrid FEM–ML solvers, and agentic AI / RAG systems for research workflows."
   }
 ]

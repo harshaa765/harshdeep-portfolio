@@ -7,30 +7,32 @@ export default function Skills() {
     <div id='skills' className='py-6 text-justify'>
       <SectionHeader header='skills' />
 
-      <article className='prose mx-auto mt-8 max-w-screen-2xl place-content-center px-2 text-justify lg:prose-xl md:px-4 lg:px-16'>
-<blockquote>
-  <p>
-    My technical expertise lies in developing high-fidelity numerical tools and simulations
-    for fatigue, fracture, and multiscale material modeling. Below is a categorized overview 
-    of my software, programming, and modeling skills.
-  </p>
-</blockquote>
+      <article className='prose lg:prose-xl mx-auto mt-8 max-w-screen-2xl place-content-center px-2 text-justify md:px-4 lg:px-16'>
+        <blockquote>
+          <p>
+            My technical expertise lies in developing high-fidelity numerical
+            tools and simulations for fatigue, fracture, and multiscale material
+            modeling. Below is a categorized overview of my software,
+            programming, and modeling skills.
+          </p>
+        </blockquote>
 
-       <h3>Core Tools & Frameworks:</h3>
+        <h3>Core Tools & Frameworks:</h3>
         <div className='grid grid-cols-1 grid-rows-3 justify-between gap-4 md:grid-cols-2'>
           {SkillsData.primary.map((skill) => (
             <div className='w-full' key={skill.name}>
               <strong>{skill.name}: </strong>
               <progress
-                className='progress'
+                className='progress progress-primary'
                 value={skill.value}
                 max='100'
+                aria-label={`${skill.name} proficiency`}
               ></progress>
             </div>
           ))}
         </div>
 
-<h3>Additional Tools & Concepts:</h3>
+        <h3>Additional Tools & Concepts:</h3>
         <div>
           {SkillsData.secondary.map((skill) => (
             <div key={skill} className='badge badge-outline badge-lg my-2 mr-4'>

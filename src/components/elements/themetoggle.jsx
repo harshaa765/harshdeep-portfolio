@@ -11,16 +11,24 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  // Avoid a hydration mismatch: render a neutral placeholder until mounted.
+  if (!mounted) {
+    return (
+      <span className='btn btn-ghost btn-circle btn-sm' aria-hidden='true' />
+    );
+  }
 
   const currentTheme = theme === 'system' ? systemTheme : theme;
+  const isDark = currentTheme === 'dark';
 
   return (
     <button
-      onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
-      className="btn btn-sm btn-outline ml-2"
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      className='btn btn-ghost btn-circle btn-sm text-lg'
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {currentTheme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+      {isDark ? '☀️' : '🌙'}
     </button>
   );
 }

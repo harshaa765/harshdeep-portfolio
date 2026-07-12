@@ -7,6 +7,7 @@ import { getAllArticles } from '../../../src/utils/mdx';
 import { characterLimit } from '../../../src/utils';
 import { jsonLdForBlogPage } from '../../utils/jsonLD';
 import seoData from '../../data/seo.json';
+import { SITE_URL, SITE_NAME } from '../../config/site';
 
 export const metadata = {
   title: seoData.blogs.title,
@@ -14,8 +15,8 @@ export const metadata = {
   category: 'technology',
   referrer: 'origin-when-cross-origin',
   keywords: seoData.blogs.keywords,
-  metadataBase: new URL('http://localhost:3000'),
-  publisher: 'next-portfolio-blog',
+  metadataBase: new URL(SITE_URL),
+  publisher: SITE_NAME,
   alternates: {
     canonical: '/blog',
   },
@@ -23,8 +24,8 @@ export const metadata = {
     title: seoData.blogs.title,
     description: seoData.blogs.description,
     url: '/blog',
-    siteName: 'next-portfolio-blog',
-    images: [],
+    siteName: SITE_NAME,
+    images: ['/img/about-image.png'],
     locale: 'en_US',
     type: 'website',
   },
@@ -32,8 +33,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: seoData.blogs.title,
     description: seoData.blogs.description,
-    site: '@next-portfolio-blog',
-    images: [],
+    images: ['/img/about-image.png'],
   },
 };
 
@@ -49,14 +49,20 @@ export default async function Blog() {
           <div className='divider'></div>
 
           <div className='mx-auto my-10 max-w-screen-2xl px-2 text-center md:px-4 lg:px-16 xl:px-32'>
-            <p className='text-justify text-xl font-medium'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              nisl augue, ornare ac pellentesque sit amet, mattis vitae lorem.
-              Cras posuere turpis mauris, id posuere neque dictum id. Aenean
-              magna arcu, vestibulum non ligula eget, viverra vehicula sem.
-              Maecenas iaculis facilisis accumsan.
+            <p className='mx-auto max-w-3xl text-center text-xl font-medium'>
+              Notes and tutorials on computational mechanics — phase-field and
+              cohesive-zone fracture, Abaqus UEL/UMAT subroutines, the finite
+              element method, and where physics-based modeling meets machine
+              learning.
             </p>
             <div className='divider'></div>
+            {posts.length === 0 && (
+              <div className='rounded-box border-base-300 mt-8 border border-dashed p-12'>
+                <p className='text-lg font-medium opacity-70'>
+                  ✍️ New posts are in the works — check back soon.
+                </p>
+              </div>
+            )}
             <div className='mt-8 grid grid-flow-row grid-cols-1 justify-between gap-6 md:grid-cols-2 lg:grid-cols-3'>
               {posts.map((frontMatter) => {
                 return (
@@ -65,7 +71,7 @@ export default async function Blog() {
                     href={`/blog/${frontMatter.slug}`}
                     passHref
                   >
-                    <div className='card card-compact transform bg-base-100 shadow-xl transition duration-500 hover:scale-105'>
+                    <div className='card card-compact bg-base-100 transform shadow-xl transition duration-500 hover:scale-105'>
                       <figure>
                         <Image
                           className='aspect-auto h-48 w-full object-cover'

@@ -1,11 +1,56 @@
 [
   {
     "id": 1,
-    "title": "NextJS portfolio blog template",
-    "desc": "Most of the templates available are just a starter kit and miss on something or other. This has everything that you need to start a blog.",
-    "github": "https://github.com/abhijeet-ixr/next-portfolio-blog?tab=readme-ov-file#personal-blog--portfolio-starter-kit-with-next-14",
-    "demo": "",
-    "tech": ["NextJS 15", "MDX", "Tailwind CSS", "Daisy UI", "SEO"],
-    "cover": "/img/blog/cover/1.jpg"
+    "title": "Bilinear CZM — Abaqus UMAT",
+    "desc": "Mixed-mode bilinear cohesive zone model (CZM) implemented as an Abaqus UMAT, with benchmark fracture test cases.",
+    "tech": ["Abaqus", "UMAT", "Fortran", "CZM", "Fracture"],
+    "github": "https://github.com/harshaa765/Bilinear-CZM-UMAT",
+    "stars": 23,
+    "icon": "🧩"
+  },
+  {
+    "id": 2,
+    "title": "Crystal Plasticity UMAT",
+    "desc": "Abaqus UMAT for FCC single-crystal aluminium, capturing behaviour from quasi-static to high strain rates (0.001–1000 /s).",
+    "tech": ["Abaqus", "UMAT", "Fortran", "Crystal Plasticity"],
+    "github": "https://github.com/harshaa765/UMATFile",
+    "stars": 16,
+    "icon": "🔬"
+  },
+  {
+    "id": 3,
+    "title": "Phase-Field Fracture in FEniCS",
+    "desc": "AT1/AT2 phase-field fracture demo in FEniCS — a Jupyter notebook using an SNES solver to enforce damage irreversibility.",
+    "tech": ["FEniCS", "Python", "Phase-Field", "Jupyter"],
+    "github": "https://github.com/harshaa765/Phase-Field-Fenics-AT1-Model-demo",
+    "stars": 4,
+    "icon": "🌊"
+  },
+  {
+    "id": 4,
+    "title": "UEL/UMAT for HCF Delamination",
+    "desc": "User element (UEL) and material subroutine (UMAT) for high-cycle-fatigue (HCF) delamination of composite laminates.",
+    "tech": ["Abaqus", "UEL", "UMAT", "Fortran", "Fatigue"],
+    "github": "https://github.com/harshaa765/UEL_CZM_HDF",
+    "stars": 0,
+    "icon": "♾️"
+  },
+  {
+    "id": 5,
+    "title": "Phase-Field UEL Subroutine",
+    "desc": "Abaqus user-element (UEL) subroutine for phase-field modeling of fracture in generalized mechanics problems.",
+    "tech": ["Abaqus", "UEL", "Fortran", "Phase-Field"],
+    "github": "https://github.com/harshaa765/uel_phase_field_modeling",
+    "stars": 0,
+    "icon": "🌊"
+  },
+  {
+    "id": 6,
+    "title": "minGPT-jax",
+    "desc": "A JAX / Flax / Optax port of Karpathy's minGPT — a minimal, readable GPT training implementation.",
+    "tech": ["JAX", "Flax", "Optax", "Python", "LLM"],
+    "github": "https://github.com/harshaa765/minGPT-jax",
+    "stars": 0,
+    "icon": "🤖"
   }
 ]

@@ -1,0 +1,51 @@
+name: Deploy (Vercel)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, polish-portfolio]
+
+# Deploys a preview build via the Vercel CLI so the full build log is
+# visible in GitHub Actions. Pushes to `main` publish to production.
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Determine environment
+        id: env
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "target=production" >> "$GITHUB_OUTPUT"
+            echo "flag=--prod" >> "$GITHUB_OUTPUT"
+          else
+            echo "target=preview" >> "$GITHUB_OUTPUT"
+            echo "flag=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Pull Vercel environment
+        run: vercel pull --yes --environment=${{ steps.env.outputs.target }} --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build with Vercel
+        run: vercel build ${{ steps.env.outputs.flag }} --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to Vercel
+        run: |
+          url=$(vercel deploy --prebuilt ${{ steps.env.outputs.flag }} --token=${{ secrets.VERCEL_TOKEN }})
+          echo "Deployed to: $url"
+          echo "### 🚀 Vercel ${{ steps.env.outputs.target }} deploy" >> "$GITHUB_STEP_SUMMARY"
+          echo "$url" >> "$GITHUB_STEP_SUMMARY"
