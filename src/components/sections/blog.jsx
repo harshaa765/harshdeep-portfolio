@@ -9,11 +9,14 @@ import SectionHeader from '../elements/sectionHeader';
 export default async function Blog() {
   const { posts } = await getAllPosts();
 
+  // Hide the section entirely until there are real posts to show.
+  if (posts.length === 0) return null;
+
   return (
-    <section id="blog" className="py-6">
-      <SectionHeader header="blog" />
-      <div className="mx-auto my-10 max-w-screen-2xl place-content-center px-2 text-center md:px-4 lg:px-16">
-        <div className="grid grid-flow-row grid-cols-1 justify-between gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <section id='blog' className='py-6'>
+      <SectionHeader header='blog' />
+      <div className='mx-auto my-10 max-w-screen-2xl place-content-center px-2 text-center md:px-4 lg:px-16'>
+        <div className='grid grid-flow-row grid-cols-1 justify-between gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {posts.map((frontMatter) => {
             return (
               <Link
@@ -21,29 +24,29 @@ export default async function Blog() {
                 href={`/blog/${frontMatter.slug}`}
                 passHref
               >
-                <div className="card card-compact transform bg-base-100 shadow-xl transition duration-500 hover:scale-105">
+                <div className='card card-compact bg-base-100 transform shadow-xl transition duration-500 hover:scale-105'>
                   <figure>
                     <Image
-                      className="aspect-auto h-48 w-full object-cover"
+                      className='aspect-auto h-48 w-full object-cover'
                       src={frontMatter.cover}
                       alt={frontMatter.title}
                       width={500}
                       height={300}
                     />
                   </figure>
-                  <div className="card-body text-left">
-                    <header className="mb-2 h-16">
-                      <h2 className="card-title">{frontMatter.title}</h2>
+                  <div className='card-body text-left'>
+                    <header className='mb-2 h-16'>
+                      <h2 className='card-title'>{frontMatter.title}</h2>
                     </header>
 
-                    <div className="card-actions my-4 justify-start gap-2">
-                      <div className="badge badge-outline">
+                    <div className='card-actions my-4 justify-start gap-2'>
+                      <div className='badge badge-outline'>
                         {frontMatter.category}
                       </div>
-                      <div className="badge badge-outline">
+                      <div className='badge badge-outline'>
                         {frontMatter.readingTime}
                       </div>
-                      <div className="badge badge-outline">
+                      <div className='badge badge-outline'>
                         <time dateTime={frontMatter.publishedAt}>
                           {dayjs(frontMatter.publishedAt).format('MMM D, YYYY')}
                         </time>
@@ -55,11 +58,11 @@ export default async function Blog() {
             );
           })}
         </div>
-        <div className="mt-8 pt-8">
+        <div className='mt-8 pt-8'>
           <Link
-            href="/blog"
-            role="button"
-            className="btn btn-outline btn-primary btn-wide"
+            href='/blog'
+            role='button'
+            className='btn btn-outline btn-primary btn-wide'
           >
             View More
           </Link>
@@ -80,6 +83,6 @@ async function getAllPosts(limit = 3) {
   });
 
   return {
-    posts: articles.reverse().slice(0, limit)
+    posts: articles.reverse().slice(0, limit),
   };
 }

@@ -1,5 +1,12 @@
-import constants from '../data/constants.json';
 import seoData from '../data/seo.json';
+import {
+  SITE_URL,
+  BLOG_URL,
+  SITE_NAME,
+  JOB_TITLE,
+  CONTACT_EMAIL,
+  ADDRESS_COUNTRY,
+} from '../config/site';
 
 export const jsonLdForBlogPost = (
   slug,
@@ -12,73 +19,68 @@ export const jsonLdForBlogPost = (
 ) => ({
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  '@id': `${constants.BASE_URL_BLOG}/${slug}`,
-  mainEntityOfPage: `${constants.BASE_URL_BLOG}/${slug}`,
-  url: `${constants.BASE_URL_BLOG}/${slug}`,
+  '@id': `${BLOG_URL}/${slug}`,
+  mainEntityOfPage: `${BLOG_URL}/${slug}`,
+  url: `${BLOG_URL}/${slug}`,
   headline: `${title}`,
   name: title,
   abstract: excerpt,
   description: excerpt,
-  image: `${constants.BASE_URL}/${coverImage}`,
+  image: `${SITE_URL}/${coverImage}`,
   datePublished: publishedDate,
   dateModified: publishedDate,
   isPartOf: {
     '@type': 'Blog',
-    '@id': constants.BASE_URL_BLOG,
+    '@id': BLOG_URL,
     name: seoData.blogs.title,
     publisher: {
       '@type': 'Person',
-      '@id': constants.BASE_URL,
-      name: constants.SITE_NAME
-    }
+      '@id': SITE_URL,
+      name: SITE_NAME,
+    },
   },
   author: [
     {
       '@type': 'Person',
-      name: constants.SITE_NAME,
-      url: constants.BASE_URL,
-      jobTitle: 'Software Engineer'
-    }
+      name: SITE_NAME,
+      url: SITE_URL,
+      jobTitle: JOB_TITLE,
+    },
   ],
   keywords: keywords,
-  wordCount: wordCount
+  wordCount: wordCount,
 });
 
 export const jsonLdForWebSite = () => ({
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  dateCreated: new Date('2024-09-16').toUTCString(),
   dateModified: new Date().toUTCString(),
   mainEntity: {
     '@type': 'Person',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'India',
-      addressLocality: 'Ranchi',
-      addressRegion: 'Jharkhand',
-      postalCode: '835103',
-      streetAddress: 'Ranchi, Jharkhand, India'
+      addressCountry: ADDRESS_COUNTRY,
     },
-    email: constants.CONTACT_EMAIL,
-    image: `${constants.BASE_URL}/img/about-image.png`,
-    jobTitle: 'Software Engineer',
-    name: constants.SITE_NAME,
-    url: constants.BASE_URL
+    email: CONTACT_EMAIL,
+    image: `${SITE_URL}/img/about-image.png`,
+    jobTitle: JOB_TITLE,
+    name: SITE_NAME,
+    url: SITE_URL,
   },
-  keywords: seoData.home.keywords
+  keywords: seoData.home.keywords,
 });
 
 export const jsonLdForBlogPage = () => ({
   '@context': 'https://schema.org',
   '@type': 'Blog',
-  '@id': constants.BASE_URL_BLOG,
-  mainEntityOfPage: constants.BASE_URL_BLOG,
+  '@id': BLOG_URL,
+  mainEntityOfPage: BLOG_URL,
   name: seoData.blogs.title,
   description: seoData.blogs.description,
   publisher: {
     '@type': 'Person',
-    '@id': constants.BASE_URL,
-    name: constants.SITE_NAME
+    '@id': SITE_URL,
+    name: SITE_NAME,
   },
-  keywords: seoData.blogs.keywords
+  keywords: seoData.blogs.keywords,
 });

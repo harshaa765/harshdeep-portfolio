@@ -1,5 +1,5 @@
 import { createTransport } from 'nodemailer';
-import CONSTANTS from '../../../data/constants.json';
+import { SITE_NAME, CONTACT_EMAIL } from '../../../config/site';
 
 const transporter = createTransport({
   host: 'smtp.gmail.com',
@@ -7,28 +7,42 @@ const transporter = createTransport({
   secure: true,
   auth: {
     user: process.env.EMAIL_USERNAME,
-    pass: process.env.EMAIL_PASSWORD
-  }
+    pass: process.env.EMAIL_PASSWORD,
+  },
 });
 
 export async function POST(req) {
   const { name, email, message } = await req.json();
 
-  console.log(`You have an email from: ${name} - ${email} - ${message}`);
+  if (!name || !email || !message) {
+    return Response.json(
+      { status: 'error', error: 'Missing required fields.' },
+      { status: 400 }
+    );
+  }
 
-  const info = await transporter
-    .sendMail({
-      from: `next-portfolio-blog" <${process.env.EMAIL_USERNAME}>`,
-      to: `next-portfolio-blog <${CONSTANTS.CONTACT_EMAIL}>`,
-      subject: `Contact form - next-portfolio-blog`,
+  try {
+    const info = await transporter.sendMail({
+      from: `${SITE_NAME} Portfolio <${process.env.EMAIL_USERNAME}>`,
+      to: `${SITE_NAME} <${CONTACT_EMAIL}>`,
+      replyTo: `${name} <${email}>`,
+      subject: `Portfolio contact form — message from ${name}`,
+      text: `New message from ${name} (${email}):\n\n${message}`,
       html: `
-            <p>You have an email from:</p> 
-            <p>${name}</p>  
-            <p>${email}</p>
+            <p>You have a new message from your portfolio contact form:</p>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Message:</strong></p>
             <p>${message}</p>
           `,
-    })
-    .catch((err) => console.error(err));
+    });
 
-  return Response.json({ status: 'ok', messageId: info.messageId || null });
+    return Response.json({ status: 'ok', messageId: info.messageId || null });
+  } catch (err) {
+    console.error('Contact form email failed:', err);
+    return Response.json(
+      { status: 'error', error: 'Failed to send message.' },
+      { status: 500 }
+    );
+  }
 }

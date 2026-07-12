@@ -1,3 +1,46 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
-@plugin "daisyui";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@plugin 'daisyui' {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
+
+/* next-themes sets data-theme on <html>; make Tailwind's dark: variant follow it
+   so dark:prose-invert and any dark: utilities respond to the manual toggle. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* Brand palette overlaid on daisyUI's built-in light/dark themes.
+   daisyUI utilities read these CSS variables at use-time, so redefining them
+   here re-colors bg-primary / text-primary / etc. across the whole site. */
+[data-theme='light'] {
+  --color-primary: #0d9488; /* teal-600 */
+  --color-primary-content: #ffffff;
+  --color-secondary: #4338ca; /* indigo-700 */
+  --color-secondary-content: #ffffff;
+  --color-accent: #f59e0b; /* amber-500 */
+  --color-accent-content: #1c1917;
+  --color-base-100: #ffffff;
+  --color-base-200: #f8fafc; /* slate-50 */
+  --color-base-300: #e2e8f0; /* slate-200 */
+  --color-base-content: #0f172a; /* slate-900 */
+}
+
+[data-theme='dark'] {
+  --color-primary: #2dd4bf; /* teal-400 */
+  --color-primary-content: #042f2e;
+  --color-secondary: #818cf8; /* indigo-400 */
+  --color-secondary-content: #0f172a;
+  --color-accent: #fbbf24; /* amber-400 */
+  --color-accent-content: #1c1917;
+  --color-base-100: #0f172a; /* slate-900 */
+  --color-base-200: #1e293b; /* slate-800 */
+  --color-base-300: #334155; /* slate-700 */
+  --color-base-content: #e2e8f0; /* slate-200 */
+}
+
+/* Smooth in-page navigation with an offset for the sticky header. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}

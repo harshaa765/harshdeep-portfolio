@@ -8,6 +8,7 @@ import BlogImage from '../../../components/elements/blogImage';
 
 import { getSlug, getArticleFromSlug } from '../../../../src/utils/mdx';
 import { jsonLdForBlogPost } from '../../../../src/utils/jsonLD';
+import { SITE_URL, SITE_NAME } from '../../../config/site';
 
 const options = {
   mdxOptions: {
@@ -35,7 +36,7 @@ export default async function BlogDetails({ params }) {
   return (
     <>
       <section>
-        <article className='prose-figure:align-center prose mx-auto my-8 max-w-screen-lg px-2 md:prose-lg lg:prose-xl dark:prose-invert'>
+        <article className='prose-figure:align-center prose md:prose-lg lg:prose-xl dark:prose-invert mx-auto my-8 max-w-screen-lg px-2'>
           <h2>{frontMatter.title}</h2>
           <figure>
             <Image
@@ -86,20 +87,22 @@ export async function generateMetadata({ params }) {
   return {
     title: frontMatter.title,
     description: frontMatter.excerpt,
-    metadataBase: new URL('http://localhost:3000'),
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: frontMatter.title,
       description: frontMatter.excerpt,
       type: 'article',
       publishedTime: frontMatter.publishedAt,
-      authors: [{ name: 'next-portfolio-blog', url: 'http://localhost:3000' }],
+      authors: [{ name: SITE_NAME, url: SITE_URL }],
       images: [frontMatter.cover],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${frontMatter.title} | next-portfolio-blog`,
+      title: `${frontMatter.title} | ${SITE_NAME}`,
       description: frontMatter.excerpt,
-      site: '@next-portfolio-blog',
       images: [frontMatter.cover],
     },
   };

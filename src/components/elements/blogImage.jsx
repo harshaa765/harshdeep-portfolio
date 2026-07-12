@@ -5,7 +5,7 @@ export default function BlogImage(props) {
     <Image
       width={900}
       height={500}
-      className="mx-auto aspect-auto"
+      className='mx-auto aspect-auto'
       alt={props.alt}
       {...props}
     />

@@ -1,77 +1,67 @@
-'use client';
-
 import SectionHeader from '../elements/sectionHeader';
+import publications from '../../data/publications.json';
 
-const publications = [
-  {
-    title:
-      'Combined phase-field and cohesive zone modeling for mixed-mode fracture in polymer composites',
-    authors: 'H. Sharma, A. Singh',
-    journal: 'Engineering with Computers, 2025',
-    doi: 'https://doi.org/10.1007/s00366-025-02134-y'
-  },
-  {
-    title:
-      'Numerical implementation of a modified cohesive zone model for HCF behavior of adhesively bonded composite laminates under mixed mode loading',
-    authors: 'H. Sharma, A. Singh',
-    journal: 'International Journal of Fatigue, 2024',
-    doi: 'https://doi.org/10.1016/j.ijfatigue.2023.108128'
-  },
-  {
-    title:
-      'An efficient phase field solver for modelling of elastic–plastic fracture in bimaterials',
-    authors: 'H. Sharma, A. Singh',
-    journal: 'International Journal of Mechanics and Materials in Design, 2024',
-    doi: 'https://doi.org/10.1007/s10999-023-09665-6'
-  },
-  {
-    title:
-      'A degradation-informed load accumulation framework for phase-field modeling of high-cycle fatigue in composites',
-    authors: 'H. Sharma, A. Singh',
-    journal: 'Submitted to Composites Science and Technology (Under Review)',
-    doi: ''
-  },
-  {
-    title:
-      'Physics-Informed Neural Networks with Fourth-Order Phase-Field Modeling for Fracture of Functionally Graded Materials',
-    authors: 'H. Sharma, S. Ahmad, S. Singh, A. Singh',
-    journal: 'To be submitted to Structures',
-    doi: ''
-  }
-];
+const STATUS = {
+  published: { label: 'Published', badge: 'badge-success' },
+  review: { label: 'Under Review', badge: 'badge-warning' },
+  preparation: { label: 'In Preparation', badge: 'badge-ghost' },
+};
+
+function PublicationItem({ pub }) {
+  const status = STATUS[pub.status] ?? STATUS.published;
+
+  return (
+    <li className='rounded-box border-base-300 bg-base-100 border p-5 shadow-sm transition-shadow hover:shadow-md'>
+      <div className='mb-2 flex flex-wrap items-center gap-2'>
+        <span className={`badge badge-sm ${status.badge}`}>{status.label}</span>
+        <span className='text-sm font-medium opacity-70'>{pub.year}</span>
+      </div>
+      <h3 className='text-base leading-snug font-bold md:text-lg'>
+        {pub.title}
+      </h3>
+      <p className='mt-1 text-sm italic opacity-80'>{pub.authors}</p>
+      <p className='text-sm opacity-70'>{pub.venue}</p>
+      {pub.doi && (
+        <a
+          href={`https://doi.org/${pub.doi}`}
+          className='btn btn-outline btn-primary btn-xs mt-3'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          View DOI
+        </a>
+      )}
+    </li>
+  );
+}
 
 export default function Publications() {
+  const published = publications.filter((p) => p.status === 'published');
+  const inProgress = publications.filter((p) => p.status !== 'published');
+
   return (
-    <div id='publications' className='py-6 text-justify'>
+    <section id='publications' className='py-6'>
       <SectionHeader header='publications' />
       <div className='mx-auto mt-8 max-w-screen-2xl px-2 md:px-4 lg:px-16'>
-        <ul className='list-disc space-y-6 pl-6'>
-          {publications.map((pub, idx) => (
-            <li key={idx} className='prose lg:prose-xl'>
-              <p>
-                <strong>{pub.title}</strong>
-                <br />
-                <span className='text-sm italic'>{pub.authors}</span>
-                <br />
-                <span className='text-sm'>{pub.journal}</span>
-                {pub.doi && (
-                  <>
-                    <br />
-                    <a
-                      href={pub.doi}
-                      className='text-blue-600 underline'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      [DOI]
-                    </a>
-                  </>
-                )}
-              </p>
-            </li>
+        <ul className='grid gap-4 md:grid-cols-2'>
+          {published.map((pub) => (
+            <PublicationItem key={pub.title} pub={pub} />
           ))}
         </ul>
+
+        {inProgress.length > 0 && (
+          <>
+            <h3 className='mt-10 mb-4 text-center text-xl font-semibold opacity-80'>
+              Manuscripts Under Review &amp; In Preparation
+            </h3>
+            <ul className='grid gap-4 md:grid-cols-2'>
+              {inProgress.map((pub) => (
+                <PublicationItem key={pub.title} pub={pub} />
+              ))}
+            </ul>
+          </>
+        )}
       </div>
-    </div>
+    </section>
   );
 }

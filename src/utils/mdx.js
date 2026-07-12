@@ -30,15 +30,17 @@ export function getArticleFromSlug(slug) {
       slug,
       readingTime: readingTime(source).text,
       wordCount: count(source),
-      ...data
-    }
+      ...data,
+    },
   };
 }
 
 export async function getAllArticles() {
+  if (!fs.existsSync(FILE_PATH)) return [];
+
   const articles = fs
     .readdirSync(FILE_PATH)
-    .filter((file) => file.includes('.mdx') || file.includes('.md'));
+    .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'));
 
   return articles.reduce((allArticles, articleSlug) => {
     const source = fs.readFileSync(
@@ -51,10 +53,9 @@ export async function getAllArticles() {
       {
         ...data,
         slug: articleSlug.replace('.mdx', ''),
-        readingTime: readingTime(source).text
-        
+        readingTime: readingTime(source).text,
       },
-      ...allArticles
+      ...allArticles,
     ];
   }, []);
 }

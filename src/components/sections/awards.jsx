@@ -1,23 +1,5 @@
-'use client';
-
 import SectionHeader from '../elements/sectionHeader';
-
-const awards = [
-  {
-    title: 'GATE (ME)',
-    year: '2016 & 2017',
-    description:
-      'Qualified GATE with 97.05 percentile in 2016 and 98.97 percentile in 2017.',
-    icon: '🏆'
-  },
-  {
-    title: 'MHRD Fellowship',
-    year: '2018 – Present',
-    description:
-      'Awarded Institute Fellowship during M.Tech and PhD for academic excellence.',
-    icon: '🎖️'
-  }
-];
+import awards from '../../data/awards.json';
 
 export default function Awards() {
   return (

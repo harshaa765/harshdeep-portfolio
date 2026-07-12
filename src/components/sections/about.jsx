@@ -6,23 +6,28 @@ export default function About() {
   return (
     <div id='about' className='py-4 text-justify'>
       <SectionHeader header='about' />
-      <article className='prose mx-auto mt-8 max-w-screen-2xl place-content-center px-2 text-center lg:prose-xl md:px-4 lg:px-16'>
-<blockquote>
-  <p>
-    I’m <strong>Harshdeep Sharma</strong>, a final-year PhD researcher in Computational Mechanics at <strong>IIT Patna</strong>. 
-    My research focuses on developing cutting-edge numerical models for simulating fatigue and fracture behavior 
-    in fiber-reinforced composites. I work extensively with <strong>phase-field</strong> and <strong>cohesive zone methods</strong>, 
-    and I specialize in implementing <strong>custom user elements (UELs)</strong> in Abaqus.
-  </p>
-  <p>
-    My broader vision is to bridge the gap between traditional physics-based modeling and emerging AI techniques 
-    to build next-generation material modeling tools. I'm passionate about high-performance computing, automation, 
-    and open-source scientific development.
-  </p>
-</blockquote>
+      <article className='prose lg:prose-xl mx-auto mt-8 max-w-screen-2xl place-content-center px-2 text-center md:px-4 lg:px-16'>
+        <blockquote>
+          <p>
+            I’m <strong>Harshdeep Sharma</strong>, a final-year PhD researcher
+            in Computational Mechanics at <strong>IIT Patna</strong>. My
+            research focuses on developing cutting-edge numerical models for
+            simulating fatigue and fracture behavior in fiber-reinforced
+            composites. I work extensively with <strong>phase-field</strong> and{' '}
+            <strong>cohesive zone methods</strong>, and I specialize in
+            implementing <strong>custom user elements (UELs)</strong> in Abaqus.
+          </p>
+          <p>
+            My broader vision is to bridge the gap between traditional
+            physics-based modeling and emerging AI techniques to build
+            next-generation material modeling tools. I&apos;m passionate about
+            high-performance computing, automation, and open-source scientific
+            development.
+          </p>
+        </blockquote>
       </article>
       <div className='mx-auto max-w-screen-2xl px-2 md:px-4 lg:px-16'>
-        <ul className='timeline timeline-vertical timeline-snap-icon my-10 max-md:timeline-compact'>
+        <ul className='timeline timeline-vertical timeline-snap-icon max-md:timeline-compact my-10'>
           {TimelineData.map((data, index) => (
             <li key={data.year}>
               <div className='timeline-middle'>
