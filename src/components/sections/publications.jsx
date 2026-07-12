@@ -3,6 +3,7 @@ import publications from '../../data/publications.json';
 
 const STATUS = {
   published: { label: 'Published', badge: 'badge-success' },
+  inpress: { label: 'In Press', badge: 'badge-info' },
   review: { label: 'Under Review', badge: 'badge-warning' },
   preparation: { label: 'In Preparation', badge: 'badge-ghost' },
 };
@@ -14,7 +15,9 @@ function PublicationItem({ pub }) {
     <li className='rounded-box border-base-300 bg-base-100 border p-5 shadow-sm transition-shadow hover:shadow-md'>
       <div className='mb-2 flex flex-wrap items-center gap-2'>
         <span className={`badge badge-sm ${status.badge}`}>{status.label}</span>
-        <span className='text-sm font-medium opacity-70'>{pub.year}</span>
+        {pub.year && (
+          <span className='text-sm font-medium opacity-70'>{pub.year}</span>
+        )}
       </div>
       <h3 className='text-base leading-snug font-bold md:text-lg'>
         {pub.title}
@@ -37,7 +40,7 @@ function PublicationItem({ pub }) {
 
 export default function Publications() {
   const published = publications.filter((p) => p.status === 'published');
-  const inProgress = publications.filter((p) => p.status !== 'published');
+  const upcoming = publications.filter((p) => p.status !== 'published');
 
   return (
     <section id='publications' className='py-6'>
@@ -49,13 +52,13 @@ export default function Publications() {
           ))}
         </ul>
 
-        {inProgress.length > 0 && (
+        {upcoming.length > 0 && (
           <>
             <h3 className='mt-10 mb-4 text-center text-xl font-semibold opacity-80'>
-              Manuscripts Under Review &amp; In Preparation
+              In Press &amp; Upcoming Manuscripts
             </h3>
             <ul className='grid gap-4 md:grid-cols-2'>
-              {inProgress.map((pub) => (
+              {upcoming.map((pub) => (
                 <PublicationItem key={pub.title} pub={pub} />
               ))}
             </ul>

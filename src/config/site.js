@@ -11,8 +11,10 @@ export const SITE_URL = rawUrl.replace(/\/+$/, '');
 export const BLOG_URL = `${SITE_URL}/blog`;
 
 export const SITE_NAME = 'Harshdeep Sharma';
-export const SITE_TAGLINE = 'PhD Researcher · Computational Mechanics';
-export const JOB_TITLE = 'PhD Researcher in Computational Mechanics';
+export const SITE_TAGLINE =
+  'Senior Research Scientist · Computational Mechanics & SciML';
+export const JOB_TITLE =
+  'Research Scientist — Computational Mechanics & Scientific Machine Learning';
 export const CONTACT_EMAIL = 'harshsharma52@gmail.com';
 
 /** Home country for structured data (no precise address for privacy). */

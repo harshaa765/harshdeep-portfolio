@@ -1,5 +1,13 @@
 [
   {
+    "title": "A degradation-informed phase-field model for matrix-dominated high-cycle fatigue in 3D composite laminates",
+    "authors": "H. Sharma, A. Singh",
+    "venue": "Composites Part A: Applied Science and Manufacturing",
+    "year": 2025,
+    "doi": "10.1016/j.compositesa.2025.109377",
+    "status": "published"
+  },
+  {
     "title": "Combined phase-field and cohesive zone modeling for mixed-mode fracture in polymer composites",
     "authors": "H. Sharma, A. Singh",
     "venue": "Engineering with Computers",
@@ -24,19 +32,11 @@
     "status": "published"
   },
   {
-    "title": "A degradation-informed load accumulation framework for phase-field modeling of high-cycle fatigue in composites",
-    "authors": "H. Sharma, A. Singh",
-    "venue": "Composites Science and Technology",
-    "year": 2025,
-    "doi": "",
-    "status": "review"
-  },
-  {
     "title": "Physics-Informed Neural Networks with Fourth-Order Phase-Field Modeling for Fracture of Functionally Graded Materials",
-    "authors": "H. Sharma, S. Ahmad, S. Singh, A. Singh",
-    "venue": "Structures",
-    "year": 2025,
+    "authors": "S. I. Ahmad, H. Sharma, A. Singh, S. K. Singh",
+    "venue": "Mechanics of Materials",
+    "year": null,
     "doi": "",
-    "status": "preparation"
+    "status": "inpress"
   }
 ]

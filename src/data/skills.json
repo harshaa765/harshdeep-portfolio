@@ -1,12 +1,12 @@
 {
   "primary": [
     { "name": "Abaqus (UEL, UMAT)", "value": 95 },
-    { "name": "Python (NumPy, SciPy, Matplotlib, TensorFlow)", "value": 90 },
+    { "name": "Python (NumPy, SciPy, PyTorch, TensorFlow)", "value": 90 },
+    { "name": "Finite Element Methods", "value": 95 },
+    { "name": "Phase-Field & Cohesive Zone Modeling", "value": 90 },
+    { "name": "Scientific ML (JAX, Neural Operators)", "value": 82 },
     { "name": "Fortran", "value": 85 },
-    { "name": "C++", "value": 80 },
-    { "name": "Phase-Field Modeling", "value": 90 },
-    { "name": "Cohesive Zone Models", "value": 85 },
-    { "name": "Finite Element Methods", "value": 95 }
+    { "name": "C++", "value": 80 }
   ],
   "secondary": [
     "COMSOL",
@@ -17,6 +17,12 @@
     "ParaView",
     "HPC",
     "PINN",
+    "Neural Operators (FNO/GINO/WNO)",
+    "JAX",
+    "PyTorch",
+    "Agentic AI",
+    "RAG",
+    "Docker",
     "DSA"
   ]
 }

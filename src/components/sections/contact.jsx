@@ -47,8 +47,8 @@ export default function Contact() {
           <div className='card bg-base-200 dark:bg-base-100 w-full rounded-xl shadow-lg transition-colors lg:w-1/2'>
             <div className='gap-6 p-6'>
               <p className='text-lg font-semibold'>
-                If you&apos;d like to reach out, feel free to use the form or any of
-                the social links below.
+                If you&apos;d like to reach out, feel free to use the form or
+                any of the social links below.
               </p>
               <div className='mt-6 flex justify-center gap-6'>
                 {Socials.map(({ name, url, icon }) => (

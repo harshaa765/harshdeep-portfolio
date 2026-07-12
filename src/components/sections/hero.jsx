@@ -16,7 +16,7 @@ export default function Hero() {
         />
         <div className='flex w-full flex-col items-center text-center lg:w-1/2 lg:items-start lg:text-left'>
           <p className='text-primary text-sm font-semibold tracking-widest uppercase'>
-            PhD Researcher · Computational Mechanics
+            Senior Research Scientist · Computational Mechanics &amp; SciML
           </p>
           <h1 className='mt-4 text-3xl leading-tight font-bold md:text-4xl xl:text-5xl'>
             Building next-generation models for{' '}
@@ -24,10 +24,10 @@ export default function Hero() {
             composites.
           </h1>
           <p className='mt-5 max-w-xl text-lg opacity-80'>
-            I develop phase-field and cohesive-zone methods, custom Abaqus
-            UEL/UMAT solvers, and physics-informed machine learning for material
-            modeling — building scalable simulation pipelines in Python, Fortran
-            and C++.
+            I build phase-field and cohesive-zone methods and custom Abaqus
+            UEL/UMAT solvers for fracture and fatigue — and increasingly,
+            operator-based and physics-informed machine learning (FNO, GINO,
+            PINNs) in JAX to make these simulations faster and more general.
           </p>
 
           <div className='mt-8 flex flex-wrap justify-center gap-3 lg:justify-start'>
